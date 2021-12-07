@@ -1,0 +1,30 @@
+package ch10;
+
+import java.util.Calendar;
+
+public class CalendarEx2 {
+    public static void main(String[] args) {
+        final String[] DAY_OF_WEEK = {
+                "", "Mon", "Tue", "Wen", "Thur", "Fri", "satur", "Sun",
+        };
+
+        Calendar date1 = Calendar.getInstance();
+        Calendar date2 = Calendar.getInstance();
+
+        //date1.set(2015, Calendar.AUGUST, 15);
+        date1.set(2015, 7, 15);
+        System.out.println("date1 ="+toString(date1)+ DAY_OF_WEEK[date1.get(Calendar.DAY_OF_WEEK)]+",");
+        System.out.println("date2 ="+toString(date2)+ DAY_OF_WEEK[date2.get(Calendar.DAY_OF_WEEK)]);
+
+        long difference = (date2.getTimeInMillis() - date1.getTimeInMillis()) / 1000;
+
+        System.out.println("difference= " + difference);
+        System.out.println("difference's hour:"+difference/(24*60*60));
+
+    }
+
+    public static String toString(Calendar date) {
+        return date.get(Calendar.YEAR)+"년 "+(date.get(Calendar.MONTH)+1)
+                +"월 " + date.get(Calendar.DATE) + "일 ";
+    }
+}
