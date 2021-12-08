@@ -18,8 +18,8 @@ public class CalendarEx2 {
 
         long difference = (date2.getTimeInMillis() - date1.getTimeInMillis()) / 1000;
 
-        System.out.println("difference= " + difference);
-        System.out.println("difference's hour:"+difference/(24*60*60));
+        System.out.printf("그 날부터 %d초가 지났습니다.\n", difference);
+        System.out.printf("날로  변환하면 %d일이 지난거죠", difference/(24*60*60));
 
     }
 
